@@ -1,3 +1,7 @@
+# for macOS
+.DS_Store
+tobe/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
