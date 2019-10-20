@@ -7,5 +7,9 @@ app = Flask(__name__)
 def index():
     return "flask works!"
 
+@app.route('/about')
+def about():
+    return "This is about page"
+
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
