@@ -71,6 +71,7 @@ def get_query():
 
 - Web Application User test tool
 - `$ pip install selenium`
+- with webdriver
 
 ---
 
@@ -98,6 +99,12 @@ def get_query():
 
 ## Web Scraping with Selenium
 
+```python
+from selenium import webdriver
+ch_driver = webdriver.Chrome(<your webdriver path>)
+ch_driver.get('https://www.google.com/')
+```
+
 ---
 
 ## N사 포털 카페 서비스
@@ -106,9 +113,24 @@ def get_query():
 
 ---
 
+## Key script
+
+```python
+query_input = ch_driver.find_element_by_id("<id of element>")
+query_input.send_keys(<query>)
+ch_driver.execute_script(<javascript>)
+ch_driver.switch_to_frame(<element>)
+```
+
+---
+
 ## Quora
 
 > 더 많은 데이터 로딩을 위해 스크롤 후 데이터를 가져와봅시다.
+
+```python
+ch_driver.execute_script("window.scrollTo(0, window.scrollY + 1000)")
+```
 
 ---
 
@@ -140,9 +162,164 @@ def get_query():
 
 ---
 
+## Google Cloud Functions
+
+<img src="./img/gcp01.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp02.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp03.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp04.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp05.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp06.png" width="600" height="300">
+
+---
+
+## Nv_query with gcloud
+
+```python
+import requests
+import lxml
+from bs4 import BeautifulSoup
+from time import ctime
+import json
+
+
+def get_nv_query(request):
+    base_uri = "https://www.naver.com/"
+    exec_time = ctime()
+    response = requests.get(base_uri)
+    html_text = response.text
+    soup = BeautifulSoup(html_text, 'lxml')
+    ul_tag = soup.find("ul", attrs={"class":"ah_l"})
+    querys = []
+    for li in ul_tag.find_all("li"):
+        query = li.find("span", attrs={"class":"ah_k"}).text
+        querys.append(query)
+    result = {
+        "time": exec_time,
+        "items": querys,
+    }
+    print(result)
+    return json.dumps(result, ensure_ascii=False)
+```
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp07.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp08.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp09.png" width="600" height="300">
+
+---
+
 ## Store data with mlab
 
 - https://mlab.com/
+
+---
+
+```python
+import requests
+import lxml
+from bs4 import BeautifulSoup
+from time import ctime
+#import json
+from pymongo import MongoClient
+
+
+def get_nv_query(event, context):
+    # ...
+    result = {
+        "time": exec_time,
+        "items": querys,
+    }
+    # ...
+    # insert into mlab
+    mongo_uri = "mongodb://betteradmin:1q2w3e4r@ds255403.mlab.com:55403/allquerys?retryWrites=false"
+    try:
+        client = MongoClient(mongo_uri)
+        db = client.allquerys
+        db_nvquerys = db.nvquerys
+        db_nvquerys.insert_one(result)
+    except:
+        return "failed on {}".format(exec_time)
+    return "success on {}".format(exec_time)
+```
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp10.png" width="600" height="300">
+
+---
+
+## Turn into pubsub and schedule function
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp11.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp12.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp13.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp14.png" width="600" height="300">
+
+---
+
+## Google Cloud Functions
+
+<img src="./img/gcp15.png" width="600" height="300">
 
 
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800" rel="stylesheet">
