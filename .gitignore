@@ -1,7 +1,6 @@
 # for macOS
 .DS_Store
-tobe/
-hidden/
+.hidden/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
