@@ -1,25 +1,40 @@
+---
+marp: true
+---
+
 # Fastcampus Sprint - Programming
+
 ## Day 1. 일단 웹스크래퍼를 만들어보자!
 
+- ssid: Fastcampus_11F
+- pw: camp1017!!
+
 ---
+
 <!--
-page_number: true
-$size: A4
+paginate: true
+theme: default
+class: invert
+size: 16:9
 footer : fastcampus 4주만에 프로그래머되기, Wooyoung Choi, 2019
 -->
 
 ## Introduce
 
 ### 최우영
+
 - Co-founder, Developer at Disceptio
 - Solution Architect, Web Developer, Instructor
 - Skills: Python, Golang, Julia, Node.js, Google tag manager ...
 
 #### blog: https://ulgoon.github.io/
+
 #### github: https://github.com/ulgoon/
+
 #### email: me@ulgoon.com
 
 ---
+
 ## Goal
 
 - 파이썬을 잘 몰라도 작업의 흐름을 이해한 뒤, 웹 스크래퍼를 만들 수 있다.
@@ -28,6 +43,7 @@ footer : fastcampus 4주만에 프로그래머되기, Wooyoung Choi, 2019
 - 다양한 형태의 웹페이지의 요소 혹은 일반적인 구조를 갖지 않은 형태의 데이터에 접근하여 데이터를 가져올 수 있다.
 
 ---
+
 ## Index
 
 - 웹페이지 소스 가져오기
@@ -36,7 +52,9 @@ footer : fastcampus 4주만에 프로그래머되기, Wooyoung Choi, 2019
 - 정리한 요소 저장하기
 
 ---
+
 ## python 이란?
+
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/220px-Python-logo-notext.svg.png)
 
 - 1991년 Guido Van Rossum이 발표한 고급 프로그래밍 언어
@@ -45,22 +63,26 @@ footer : fastcampus 4주만에 프로그래머되기, Wooyoung Choi, 2019
 - 동적타이핑
 
 ---
+
 ## Web Scraping 이란?
+
 Scraping: 데이터를 수집하는 행위
 
 ![](http://webdata-scraping.com/media/2013/11/web-scraping-services.png)
 
 ---
+
 ## 웹페이지 소스 가져오기
 
 ---
+
 ## 파이썬과 라이브러리 설치하기(Python)
 
 - for windows: https://www.python.org/ftp/python/3.7.4/python-3.7.4-amd64.exe
 
 - for ubuntu: `$ sudo apt-get install python3`
 
-- for macOS: 
+- for macOS
 
 ```shell
 $ xcode-select --install
@@ -69,6 +91,7 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 
 $ brew install python
 ```
+
 `$ python3 --version`으로 성공유무를 확인합니다
 
 ---
@@ -86,7 +109,9 @@ $ pip install jupyter
 `$ pip list`로 설치 내역을 확인합니다
 
 ---
+
 ## 웹페이지 소스 가져오기
+
 ```shell
 $ jupyter notebook
 >>> import requests
@@ -102,7 +127,9 @@ $ jupyter notebook
 ```
 
 ---
+
 ## 사용할 라이브러리 불러오기
+
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -113,13 +140,17 @@ import time
 ```
 
 ---
+
 ## 원하는 요소 선택하기
 
 ---
+
 ### 1. 앙대포털 검색어 가져오기(리스트형 데이터)
 
 ---
+
 #### N사
+
 ```python
 response = requests.get("https://www.naver.com/")
 executed_time = time.ctime()
@@ -138,7 +169,9 @@ nv_keywords
 ```
 
 ---
+
 #### D사
+
 ```python
 response = requests.get("https://www.daum.net")
 executed_time = time.ctime()
@@ -157,9 +190,11 @@ du_keywords
 ```
 
 ---
+
 ### 2. 박스오피스 데이터 가져오기(테이블형 데이터)
 
 ---
+
 ```python
 base_uri = "https://rottentomatoes.com"
 executed_time = time.ctime()
@@ -172,6 +207,7 @@ tr_list = table_data.find_all("tr")
 ```
 
 ---
+
 ## 선택한 요소 정리하기
 
 추출한 데이터를 사용하기 편리한 형태로 가공합니다.
@@ -179,8 +215,8 @@ tr_list = table_data.find_all("tr")
 ex) "10" -> 10
 "$1.0M" -> 1000000
 
-
 ---
+
 ```python
 box_office_list = []
 for tr in tr_list:
@@ -210,11 +246,13 @@ box_office_list
 ```
 
 ---
+
 ## 정리한 요소 저장하기
 
 정리한 요소를 저장하기 위해 저장할 포맷을 먼저 정합니다.
 
 ---
+
 ### 다양한 파일 포맷
 
 - **TXT(TeXT)**
@@ -225,7 +263,9 @@ box_office_list
 - **json(javascript object notation)**
 
 ---
+
 #### TXT
+
 ```python
 with open('nvquery.txt', 'a') as f:
     for kw in nv_keywords:
@@ -234,7 +274,9 @@ with open('nvquery.txt', 'a') as f:
 ```
 
 ---
+
 #### 파일 읽기
+
 ```python
 with open('nvquery.txt', 'r') as f:
     text = f.readlines()
@@ -243,7 +285,9 @@ with open('nvquery.txt', 'r') as f:
 ```
 
 ---
+
 #### CSV
+
 ```python
 with open('nv_query.csv', 'a') as f:
     for kw in nv_keywords:
@@ -251,7 +295,9 @@ with open('nv_query.csv', 'a') as f:
 ```
 
 ---
+
 #### XLSX
+
 ```python
 workbook_name = 'nv_query.xlsx'
 try:
@@ -266,7 +312,9 @@ workbook.save('nv_query.xlsx')
 ```
 
 ---
+
 #### write and update json
+
 ```python
 try:
     with open('nv_query.json', 'r+') as f:
@@ -282,7 +330,9 @@ except FileNotFoundError:
 ```
 
 ---
+
 #### read json
+
 ```python
 with open('nv_query.json', 'r') as f:
     data = json.load(f)
