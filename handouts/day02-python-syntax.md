@@ -10,14 +10,12 @@ marp: true
 <!--
 paginate: true
 theme: default
-class: invert
 size: 16:9
 footer : fastcampus 4주만에 프로그래머되기, Wooyoung Choi, 2019
 -->
 
 ## Index
 
-- 정리한 요소 저장하기(xlsx, json)
 - Python 핵심문법
 	- 연산과 연산자
 	- 변수
