@@ -12,7 +12,7 @@ marp: true
 paginate: true
 theme: default
 size: 16:9
-footer : fastcampus 디지털 마케팅 스쿨, Wooyoung Choi, 2019
+footer : fastcampus Sprint Programming, Wooyoung Choi, 2019
 -->
 
 ## Do it your self!
