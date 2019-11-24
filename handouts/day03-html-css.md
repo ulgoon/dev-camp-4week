@@ -205,6 +205,7 @@ while trial:
         print("You are Wrong! The answer was ", str(answer))
 ```
 
+---
 ## Index
 
 - 네트워크란?

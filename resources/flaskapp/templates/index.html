@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>나의 첫 Flask 웹사이트</title>
+  <style>
+  /* internal stylesheet */
+  body {
+      background-color: #dddddd;
+      color: #333333;
+      
+  }
+
+  h1 {
+      margin-bottom: 2.0em;
+  }
+  </style>
+ </head>
+ <body>
+  <div>
+  <!-- 얘가 주석(comment) 입니다. -->
+  <h1 id="top">Home</h1>
+  <p>This is sentence1.
+      This is sentence2.
+
+      This is sentence3.
+  </p>
+  </div>
+  <div>
+   <span>{{ msg }}</span>
+   <a href="/naver">get naver realtime keywords</a>
+   <a href="https://www.google.com/">go to google</a>
+  </div>
+  <div>
+   <img src="https://images.pexels.com/photos/2815033/pexels-photo-2815033.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" style="width: 300px;margin: 0 auto;">
+  </div>
+  <a href="#top">Go to top</a>
+ </body>
+</html>
