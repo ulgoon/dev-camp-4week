@@ -8,41 +8,16 @@ marp: true
 
 ---
 <!--
-page_number: true
-$size: A4
-footer : fastcampus 4주만에 프로그래머되기, Wooyoung Choi, 2019
+paginate: true
+theme: default
+size: 16:9
+footer : fastcampus Sprint Programming, Wooyoung Choi, 2019
 -->
 
 ## Index
 
-- Recap
 - Advanced Web Scraping with Selenium
 - Web Scraping with cloud service
-
----
-
-## Recap(1)
-
-```python
-num_list = [0, -1, 10, 3.14, 2.71828, 10000, 2736, 2847, 25, 287, 1, 50]
-
-for i in num_list:
-    if i%5==0:
-        print("{}는 5의 배수입니다.".format(i))
-```
-
----
-
-## Recap(2)
-
-```python
-def get_query():
-    # TODO
-    # requests, bs4를 이용하여 N사 실시간 검색어
-    # 가져오는 거 까지만 하세요.
-    # result = [(1,"검색어"), (2,"검색어")]
-    return result
-```
 
 ---
 
@@ -164,37 +139,37 @@ ch_driver.execute_script("window.scrollTo(0, window.scrollY + 1000)")
 
 ## Google Cloud Functions
 
-<img src="./img/gcp01.png" width="600" height="300">
+![height:400px](./img/gcp01.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp02.png" width="600" height="300">
+![height:400px](./img/gcp02.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp03.png" width="600" height="300">
+![height:400px](./img/gcp03.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp04.png" width="600" height="300">
+![height:400px](./img/gcp04.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp05.png" width="600" height="300">
+![height:400px](./img/gcp05.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp06.png" width="600" height="300">
+![height:400px](./img/gcp06.png)
 
 ---
 
@@ -231,25 +206,25 @@ def get_nv_query(request):
 
 ## Google Cloud Functions
 
-<img src="./img/gcp07.png" width="600" height="300">
+![height:400px](./img/gcp07.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp08.png" width="600" height="300">
+![height:400px](./img/gcp08.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp09.png" width="600" height="300">
+![height:400px](./img/gcp09.png)
 
 ---
 
-## Store data with mlab
+## Store data with Mongodb atlas
 
-- https://mlab.com/
+- https://www.mongodb.com/cloud/atlas
 
 ---
 
@@ -285,7 +260,7 @@ def get_nv_query(event, context):
 
 ## Google Cloud Functions
 
-<img src="./img/gcp10.png" width="600" height="300">
+![height:400px](./img/gcp10.png)
 
 ---
 
@@ -295,31 +270,31 @@ def get_nv_query(event, context):
 
 ## Google Cloud Functions
 
-<img src="./img/gcp11.png" width="600" height="300">
+![height:400px](./img/gcp11.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp12.png" width="600" height="300">
+![height:400px](./img/gcp12.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp13.png" width="600" height="300">
+![height:400px](./img/gcp13.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp14.png" width="600" height="300">
+![height:400px](./img/gcp14.png)
 
 ---
 
 ## Google Cloud Functions
 
-<img src="./img/gcp15.png" width="600" height="300">
+![height:400px](./img/gcp15.png)
 
 
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800" rel="stylesheet">
