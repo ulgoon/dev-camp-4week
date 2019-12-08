@@ -6,8 +6,8 @@ marp: true
 
 ## Day 1. 일단 웹스크래퍼를 만들어보자!
 
-- ssid: Fastcampus_11F
-- pw: camp1017!!
+- ssid: Fastcampus_10F
+- pw: changeslife
 
 ---
 
