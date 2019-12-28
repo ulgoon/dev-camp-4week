@@ -99,7 +99,7 @@ ch_driver.switch_to_frame(<element>)
 
 ---
 
-## Quora
+## Twitter
 
 > 더 많은 데이터 로딩을 위해 스크롤 후 데이터를 가져와봅시다.
 
