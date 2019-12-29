@@ -122,7 +122,7 @@ ch_driver.execute_script("window.scrollTo(0, window.scrollY + 1000)")
 
 ---
 
-## Google Cloud Flatform
+## Google Cloud Platform
 
 - 2011년 Google이 출시한 클라우드 컴퓨팅 솔루션서비스
 - 20개의 region과 61개의 zone 서비스 중
